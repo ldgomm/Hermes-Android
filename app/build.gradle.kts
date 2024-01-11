@@ -85,7 +85,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanist_version")
 
     //Coil
-    implementation("io.coil-kt:coil-compose:2.1.0")
+    implementation("io.coil-kt:coil-compose:2.2.2")
 
     //Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.48")
