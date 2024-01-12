@@ -1,4 +1,4 @@
-package com.premierdarkcoffee.hermes.ui.theme
+package com.premierdarkcoffee.hermes.util.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

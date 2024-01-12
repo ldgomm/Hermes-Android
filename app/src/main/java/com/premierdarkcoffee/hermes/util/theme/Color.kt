@@ -1,4 +1,4 @@
-package com.premierdarkcoffee.hermes.ui.theme
+package com.premierdarkcoffee.hermes.util.theme
 
 import androidx.compose.ui.graphics.Color
 

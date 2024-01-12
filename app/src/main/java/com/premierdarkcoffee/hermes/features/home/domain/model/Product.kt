@@ -1,4 +1,4 @@
-package com.premierdarkcoffee.hermes.main.model
+package com.premierdarkcoffee.hermes.features.home.domain.model
 
 import kotlinx.serialization.Serializable
 
