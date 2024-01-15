@@ -30,5 +30,4 @@ class SettingsDataStoreImpl @Inject constructor(context: Context) : SettingsData
     companion object {
         private val KEY_IS_DARK_THEME = booleanPreferencesKey("key_is_dark_theme")
     }
-
 }
