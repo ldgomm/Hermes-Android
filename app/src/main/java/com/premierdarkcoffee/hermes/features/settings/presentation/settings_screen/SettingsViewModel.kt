@@ -12,41 +12,39 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SettingsViewModel @Inject constructor(
-        private val getDarkThemeUseCase: GetDarkThemeUseCase,
-        private val saveDarkThemeUseCase: SaveDarkThemeUseCase
-) : ViewModel() {
+class SettingsViewModel @Inject constructor(private val getDarkThemeUseCase: GetDarkThemeUseCase,
+                                            private val saveDarkThemeUseCase: SaveDarkThemeUseCase) : ViewModel() {
 
-	private val _uiState = MutableStateFlow(SettingsState())
-	val uiState: StateFlow<SettingsState> = _uiState
+    private val _uiState = MutableStateFlow(SettingsState())
+    val uiState: StateFlow<SettingsState> = _uiState
 
-	init {
-		getDarkTheme()
-	}
+    init {
+        getDarkTheme()
+    }
 
-	fun onEvent(event: SettingsEvent) {
-		when (event) {
-			is SettingsEvent.DarkModeToggled -> {
-				saveDarkTheme(isDarkTheme = event.isDarkTheme)
-				getDarkTheme()
-			}
-		}
-	}
+    fun onEvent(event: SettingsEvent) {
+        when (event) {
+            is SettingsEvent.DarkModeToggled -> {
+                saveDarkTheme(isDarkTheme = event.isDarkTheme)
+                getDarkTheme()
+            }
+        }
+    }
 
-	private fun getDarkTheme() {
-		viewModelScope.launch {
-			getDarkThemeUseCase.execute().collect { isDarkTheme ->
-				if (isDarkTheme != null) {
-					_uiState.update { it.copy(isDarkTheme = isDarkTheme) }
-				}
-			}
-		}
-	}
+    private fun getDarkTheme() {
+        viewModelScope.launch {
+            getDarkThemeUseCase.execute().collect { isDarkTheme ->
+                if (isDarkTheme != null) {
+                    _uiState.update { it.copy(isDarkTheme = isDarkTheme) }
+                }
+            }
+        }
+    }
 
-	private fun saveDarkTheme(isDarkTheme: Boolean) {
-		viewModelScope.launch {
-			saveDarkThemeUseCase.execute(isDarkTheme = isDarkTheme)
-		}
-	}
+    private fun saveDarkTheme(isDarkTheme: Boolean) {
+        viewModelScope.launch {
+            saveDarkThemeUseCase.execute(isDarkTheme = isDarkTheme)
+        }
+    }
 
 }
