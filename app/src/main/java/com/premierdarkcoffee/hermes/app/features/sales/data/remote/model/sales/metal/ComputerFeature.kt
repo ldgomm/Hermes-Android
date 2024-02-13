@@ -1,4 +1,4 @@
-package com.premierdarkcoffee.hermes.features.sales_feature.data.model.sales
+package com.premierdarkcoffee.hermes.app.features.sales.data.remote.model.sales.metal
 
 import kotlinx.serialization.Serializable
 
@@ -9,7 +9,9 @@ data class ComputerFeature(var accessibility: List<String>? = null,
                            var calling: Calling? = null,
                            var carriers: List<String>? = null,
                            var chip: Chip? = null,
+                           var cpu: CPU? = null,
                            var connectivity: Connectivity? = null,
+                           var gpu: GPU? = null,
                            var location: List<String>? = null,
                            var os: String? = null,
                            var paymentMethod: String? = null,

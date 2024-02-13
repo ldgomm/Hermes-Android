@@ -1,4 +1,4 @@
-package com.premierdarkcoffee.hermes.features.sales_feature.data.model.sales
+package com.premierdarkcoffee.hermes.app.features.sales.data.remote.model.sales.metal
 
 import kotlinx.serialization.Serializable
 
