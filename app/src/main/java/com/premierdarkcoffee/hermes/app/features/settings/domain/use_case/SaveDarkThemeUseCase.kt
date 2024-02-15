@@ -1,11 +1,11 @@
-package com.premierdarkcoffee.hermes.features.settings.domain.use_case
+package com.premierdarkcoffee.hermes.app.features.settings.domain.use_case
 
 import com.premierdarkcoffee.hermes.features.settings.domain.SettingsDataStore
 import javax.inject.Inject
 
 class SaveDarkThemeUseCase @Inject constructor(private val settingsDataStore: SettingsDataStore) {
 
-    suspend fun execute(isDarkTheme: Boolean) {
+    suspend operator fun invoke(isDarkTheme: Boolean) {
         settingsDataStore.saveDarkTheme(isDarkTheme = isDarkTheme)
     }
 
