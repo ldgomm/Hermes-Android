@@ -1,4 +1,4 @@
-package com.premierdarkcoffee.hermes.util.theme
+package com.premierdarkcoffee.hermes.app.ui.theme
 
 import android.app.Activity
 import android.os.Build
