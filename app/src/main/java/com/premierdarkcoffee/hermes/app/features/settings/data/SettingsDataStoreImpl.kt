@@ -1,4 +1,4 @@
-package com.premierdarkcoffee.hermes.features.settings.data
+package com.premierdarkcoffee.hermes.app.features.settings.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
