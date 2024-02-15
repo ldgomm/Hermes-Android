@@ -1,4 +1,4 @@
-package com.premierdarkcoffee.hermes.features.settings.presentation.settings_screen
+package com.premierdarkcoffee.hermes.app.features.settings.presentation.settings_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -33,7 +33,7 @@ class SettingsViewModel @Inject constructor(private val getDarkThemeUseCase: Get
 
     private fun getDarkTheme() {
         viewModelScope.launch {
-            getDarkThemeUseCase.execute().collect { isDarkTheme ->
+            getDarkThemeUseCase().collect { isDarkTheme ->
                 if (isDarkTheme != null) {
                     _uiState.update { it.copy(isDarkTheme = isDarkTheme) }
                 }
@@ -43,7 +43,7 @@ class SettingsViewModel @Inject constructor(private val getDarkThemeUseCase: Get
 
     private fun saveDarkTheme(isDarkTheme: Boolean) {
         viewModelScope.launch {
-            saveDarkThemeUseCase.execute(isDarkTheme = isDarkTheme)
+            saveDarkThemeUseCase(isDarkTheme = isDarkTheme)
         }
     }
 
